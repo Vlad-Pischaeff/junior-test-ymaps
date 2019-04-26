@@ -8,26 +8,25 @@ Developed for testing purposes:
 <p>
 
 <ul>
-   	<li> First, make sure that the following are installed:
+<li> First, make sure that the following are installed:
   		 Python 3 (>=3.5)
-		<li> Run 
-			<pre><tt>
-   			pip install flask
-   			pip install flask_cors
-			</tt></pre>
-		<li> Create You own project directory structure by
-			<pre><tt>
-   			git clone https://github.com/Vlad-Pischaeff/junior-test-ymaps.git
-			</tt></pre>
-		<li> Come to "<b>src</b>" directory
-			<pre><tt>
-   			cd src
-			</tt></pre>
-
-		<li> Change first string of <b>ymaps.py</b> with Your own path to <b>python.exe</b>
-		<li> Launch <b>ymaps.py</b>
-		<li> In browser connect to <b>http://localhost:5000</b>
-		<li> Enjoy!
+<li> Run 
+<pre><tt>
+	pip install flask
+	pip install flask_cors
+</tt></pre>
+<li> Create You own project directory structure by
+<pre><tt>
+		git clone https://github.com/Vlad-Pischaeff/junior-test-ymaps.git
+</tt></pre>
+<li> Come to "<b>src</b>" directory
+<pre><tt>
+	cd src
+</tt></pre>
+<li> Change first string of <b>ymaps.py</b> with Your own path to <b>python.exe</b>
+<li> Launch <b>ymaps.py</b>
+<li> In browser connect to <b>http://localhost:5000</b>
+<li> Enjoy!
 </ul>
 
 <h3>Linux.</h3>
