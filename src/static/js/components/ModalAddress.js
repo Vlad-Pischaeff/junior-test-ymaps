@@ -1,11 +1,11 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import InputBase from '@material-ui/core/InputBase';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import TextField from '@material-ui/core/TextField';
 
 export default class ModalAddress extends React.Component {
 
@@ -44,6 +44,8 @@ export default class ModalAddress extends React.Component {
     }
 
     render() {
+
+
         return (
 
             <Dialog open={this.props.openWindow} onClose={this.handleCloseCancel} onEnter={this.handleOpen}>
@@ -52,30 +54,24 @@ export default class ModalAddress extends React.Component {
                     <DialogContentText>
                         Enter City, Street and Building number.
                     </DialogContentText>
-                    <InputBase defaultValue={this.props._element['city']}
-                               autoFocus
-                               margin="dense"
-                               id="city"
-                               type="text"
-                               fullWidth
-                               onChange={e => this.setState({ city: e.target.value })}
-                               onKeyPress={this.handleKeyPress}
+                    <TextField  autoFocus
+                                defaultValue={this.props._element['city']}
+                                id="city"
+                                label="City"
+                                onChange={e => this.setState({ city: e.target.value })}
+                                onKeyPress={this.handleKeyPress}
                     />
-                    <InputBase defaultValue={this.props._element['street']}
-                               margin="dense"
-                               id="street"
-                               type="text"
-                               fullWidth
-                               onChange={e => this.setState({ street: e.target.value })}
-                               onKeyPress={this.handleKeyPress}
+                    <TextField  defaultValue={this.props._element['street']}
+                                id="street"
+                                label="Street"
+                                onChange={e => this.setState({ street: e.target.value })}
+                                onKeyPress={this.handleKeyPress}
                     />
-                    <InputBase defaultValue={this.props._element['building']}
-                               margin="dense"
-                               id="building"
-                               type="text"
-                               fullWidth
-                               onChange={e => this.setState({ building: e.target.value })}
-                               onKeyPress={this.handleKeyPress}
+                    <TextField  defaultValue={this.props._element['building']}
+                                id="buiding"
+                                label="Building"
+                                onChange={e => this.setState({ building: e.target.value })}
+                                onKeyPress={this.handleKeyPress}
                     />
                 </DialogContent>
                 <DialogActions>

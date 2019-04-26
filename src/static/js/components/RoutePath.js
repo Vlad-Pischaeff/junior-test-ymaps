@@ -2,29 +2,18 @@ import React from 'react';
 import { Placemark, Polyline } from 'react-yandex-maps';
 import myIcon from '../img/myIcon2.svg';
 
-const placemark = { modules: ['geoObject.addon.hint'],
+const placemark = { modules: ['geoObject.addon.hint', 'geoObject.addon.balloon'],
                     options: {  iconLayout: 'default#image',
                                 iconImageHref: myIcon,
                                 iconImageSize: [20, 20],
                                 iconImageOffset: [-10, -10],
-                                draggable: true, }
+                                draggable: true,
+                                openBalloonOnClick: true,
+                                openEmptyBalloon:true,
+                                hideIconOnBalloonOpen:false,}
 };
 
 class RoutePath extends React.Component {
-/*    state = {
-        str: [],
-    }
-
-    componentWillReceiveProps(Props) {
-        this.setState({ str: Props.__coords});
-        //console.log("componentWillReceiveProps--", Props, this.state.str);
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        const vitalPropsChange = this.props.__coords !== nextProps.__coords;
-        console.log("nextProps--", this.props.__coords, nextProps.__coords, vitalPropsChange );
-        return true;
-    }*/
 
     handleDragend = (e, i) => {
         var obj = e.originalEvent.target.geometry._coordinates;
@@ -32,16 +21,18 @@ class RoutePath extends React.Component {
     };
 
     render() {
-        const {__coords} = this.props;
-        const coordinates = __coords.map(n => n)
+        const {__coords, __points} = this.props;
+        const coordinates = __coords.map(n => n);
+
         const listPlacemarks = __coords.map((item, i) => {
                                         return (
-                                            <Placemark {...placemark} key={i} geometry={item}
-                                                       onDragend={(e)=>this.handleDragend(e, i)} />
+                                            <Placemark {...placemark} key={`placemark-${i}`} geometry={item}
+                                                        onDragend={(e)=>this.handleDragend(e, i)}
+                                                        properties={{
+                                                            balloonContent : `${__points[i]['city']} ,${__points[i]['street']} ,${__points[i]['building']}`,
+                                                        }} />
                                         )
         });
-
-        //console.log('RoutePath render called0', __coords, this.state.str, coordinates);
 
         return (
             <div>

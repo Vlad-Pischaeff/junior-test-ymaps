@@ -89,13 +89,16 @@ class App extends Component {
                 <tbody>
                 <tr>
                     <td style={{width:"20%", height:"100%"}} >
-                        <LeftMenu  _points={this.state.points} _coords={this.state.coords}
+                        <LeftMenu  _coords={this.state.coords}
+                                   _points={this.state.points}
                                    _addAddr={this.addAddr} _removeItem={this.removeItem}
                                    _onSortEnd={this.__onSortEnd}
                                    _updateLeftMenu={this.state.updateLeftMenu} />
                     </td>
                     <td style={{width:"80%", height:"100%"}} >
-                        <AppWindow _coords={this.state.coords} _geocode={this.__geocode}
+                        <AppWindow _coords={this.state.coords}
+                                   _points={this.state.points}
+                                   _geocode={this.__geocode}
                                    _mapInstance={this.__mapInstance}
                                    _changeCoords={this.changeCoords} />
                     </td>
