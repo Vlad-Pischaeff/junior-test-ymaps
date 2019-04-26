@@ -12,16 +12,16 @@ Developed for testing purposes:
   		 Python 3 (>=3.5)
 <li> Run 
 <pre><tt>
-	pip install flask
-	pip install flask_cors
+  pip install flask
+  pip install flask_cors
 </tt></pre>
 <li> Create You own project directory structure by
 <pre><tt>
-		git clone https://github.com/Vlad-Pischaeff/junior-test-ymaps.git
+  git clone https://github.com/Vlad-Pischaeff/junior-test-ymaps.git
 </tt></pre>
 <li> Come to "<b>src</b>" directory
 <pre><tt>
-	cd src
+  cd src
 </tt></pre>
 <li> Change first string of <b>ymaps.py</b> with Your own path to <b>python.exe</b>
 <li> Launch <b>ymaps.py</b>
