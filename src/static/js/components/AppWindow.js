@@ -23,7 +23,7 @@ class AppWindow extends React.Component {
 
         return (
 
-            <YMaps query={{ lang: 'ru_RU' , apikey: 'ee5684c5-2dac-4a30-b36e-2e563e23d107' }} >
+            <YMaps query={{ lang: 'ru_RU' , apikey: 'your-api-key' }} >
                 <Map id='map' width={width} height={height} state={mapState}
                      onLoad={(ymaps) => this.geocode(ymaps)}
                      instanceRef={(map) => this.mapInstance = map} modules={['geocode']} >
